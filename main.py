@@ -1,7 +1,6 @@
 # Interface of the software
-from FA_display import *
-from FA_operations import *
 from FA_files_management import *
+from FA_display import *
 
 print("Launching...")
 automata = import_all_automata()
@@ -14,7 +13,7 @@ while True:
         break
     auto = next((a for a in automata if a["id"] == entry), None)
     if auto is None:
-        print("Automaton not found :(")
+        print("Automaton not found :/")
     else:
         print("Automaton n°{id}:".format(id=auto["id"]))
         display_table(auto)
