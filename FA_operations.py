@@ -15,6 +15,7 @@ def standardisation(automaton):
     a_standard['initial_states'] = "i"
     init = ["i"]
     a_standard["states"] = a_standard["states"] + init
+    a_standard["id"] = automaton["id"] + "S"
 
     return a_standard
 
@@ -68,5 +69,6 @@ def completion(automaton):
 
     a_complete['transitions'] = a_complete['transitions'] + add
     a_complete['states'].append("P")
+    a_complete["id"] = automaton["id"] + "C"
 
     return a_complete
