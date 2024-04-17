@@ -1,4 +1,4 @@
-# Diverse useful functions to smooth the program
+# Diverse useful functions to smooth the main program
 
 def yes_no(boolean):
     """

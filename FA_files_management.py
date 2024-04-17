@@ -5,7 +5,7 @@ from os import listdir, path
 
 def export_automaton(automaton):
     """
-    Creates a .txt file for a given automaton
+    Creates (or modifies if already existing) a .txt file for a given automaton
     """
     # Defines file name
     filename = f"automata/INT2-2-{automaton['id']}.txt"
@@ -20,7 +20,7 @@ def export_automaton(automaton):
         for transition in automaton['transitions']:
             file.write(f"{transition}\n")
 
-    print(f"Automaton successfully saved as {filename}.")
+    print(f"Automaton successfully saved in {filename}")
 
 
 def import_automaton(filename):
