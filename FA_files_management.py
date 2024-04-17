@@ -3,9 +3,9 @@
 from os import listdir, path
 
 
-def create_automaton_txt(automaton):
+def export_automaton(automaton):
     """
-    Creates the .txt file for a given automaton
+    Creates a .txt file for a given automaton
     """
     # Defines file name
     filename = f"automata/INT2-2-{automaton['id']}.txt"
@@ -20,10 +20,10 @@ def create_automaton_txt(automaton):
         for transition in automaton['transitions']:
             file.write(f"{transition}\n")
 
-    print(f"Automaton information successfully written into {filename}")
+    print(f"Automaton successfully saved as {filename}.")
 
 
-def import_automaton_from_txt(filename):
+def import_automaton(filename):
     """
     Returns the automaton stored in the .txt file as a python dictionary
     """
@@ -60,16 +60,13 @@ def import_automaton_from_txt(filename):
     return automaton_info
 
 
-def import_automata():
+def import_all_automata():
     """
     Returns a dictionary list of every automaton present in the "automata" folder
     """
     automata_lst = []
     for filename in listdir("automata"):
         f = path.join("automata", filename)
-        automata_lst.append(import_automaton_from_txt(f))
-    print("Automata successfully imported")
+        automata_lst.append(import_automaton(f))
+    print("Automata successfully imported.")
     return automata_lst
-
-
-automata = import_automata()

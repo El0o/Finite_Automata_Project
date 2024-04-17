@@ -1,16 +1,15 @@
-# Functions to display the tables
+# Function to display the tables
 
 from texttable import Texttable
-from FA_dict_management import automata
 
 
 def display_table(automaton):
     """
-    Displays a given automaton as a table, with initial states indicated with "⟶" and final states with "⟵" ("⟷" means both final & initial)
+    Displays a given automaton as a table, with initial states indicated with "⟶" and final states with "⟵" ("⟷" meaning both final & initial)
     """
     table = Texttable()
     table.set_deco(Texttable.HLINES | Texttable.VLINES)
-    table.set_chars(['—', '│', '┼', '═'])
+    table.set_chars(['—', '│', '┼', '—'])
     align = ["r"] + ["c"]*len(automaton["alphabet"])
     table.set_cols_align(align)
     head = ["  "]
@@ -45,12 +44,3 @@ def display_table(automaton):
     print(table.draw())
 
 
-while True:
-    entry = input("Enter the id of the automaton you want to display (type 'q' to quit): ")
-    if entry == "q":
-        break
-    auto = next((a for a in automata if a["id"] == entry), None)
-    if auto is None:
-        print("Automaton not found")
-    else:
-        display_table(auto)
