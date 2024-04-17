@@ -1,0 +1,14 @@
+ID: 11
+Alphabet: a, b
+States: 0, 1, 2, 3, 4, 5
+Initial States: 0
+Final States: 2
+Transitions:
+0b3
+0a2
+1a3
+1b3
+2a1
+2b0
+3a3
+3b3

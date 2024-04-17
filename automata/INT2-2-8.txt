@@ -1,0 +1,8 @@
+ID: 8
+Alphabet: a
+States: 1, 0
+Initial States: 1
+Final States: 0
+Transitions:
+1a0
+0a0

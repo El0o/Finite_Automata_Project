@@ -1,0 +1,14 @@
+ID: 16
+Alphabet: a, b, c, d
+States: 0, 1, 2, 3, 4
+Initial States: 1
+Final States: 0
+Transitions:
+1a1
+1a2
+2b2
+2b3
+3c3
+3c4
+4d4
+4d0

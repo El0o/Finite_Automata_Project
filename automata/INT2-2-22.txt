@@ -1,0 +1,12 @@
+ID: 22
+Alphabet: a, b, c, d
+States: 0, 1, 2, 3
+Initial States: 1
+Final States: 1
+Transitions:
+1a0
+1a3
+1a2
+2b3
+3c0
+0d

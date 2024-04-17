@@ -1,0 +1,12 @@
+ID: 40
+Alphabet: a, b
+States: 0, 1, 2
+Initial States: 0, 1
+Final States: 2, 0
+Transitions:
+0b1
+0b2
+1a0
+1a2
+1b2
+2a0

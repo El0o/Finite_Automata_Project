@@ -1,0 +1,18 @@
+ID: 31
+Alphabet: a, b
+States: 0, 1, 2, 3, 4, 5, 6, 7
+Initial States: 0
+Final States: 7
+Transitions:
+0$1
+0$4
+1a2
+1$3
+2b1
+2a3
+3b3
+3$7
+4b5
+5b6
+6$4
+6$7

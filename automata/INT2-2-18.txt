@@ -1,0 +1,19 @@
+ID: 18
+Alphabet: a, b, c, d
+States: 0, 1, 2, 3, 4
+Initial States: 1
+Final States: 0
+Transitions:
+1a2
+1b3
+1c4
+1d0
+2a2
+2b3
+2c4
+2d0
+3b3
+3c4
+3d0
+4c4
+4d0

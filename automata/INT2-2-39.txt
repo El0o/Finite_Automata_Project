@@ -1,0 +1,14 @@
+ID: 39
+Alphabet: a, b
+States: 0, 1, 2, 3
+Initial States: 0, 1, 3
+Final States: 1
+Transitions:
+0a1
+0b2
+1a1
+1b2
+2a0
+2b1
+3a1
+3a2

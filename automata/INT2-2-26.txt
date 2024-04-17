@@ -1,0 +1,12 @@
+ID: 26
+Alphabet: a, b
+States: 0, 1, 2, 3
+Initial States: 1
+Final States: 3
+Transitions:
+1a2
+1b2
+2a0
+2b3
+3a3
+3b3

@@ -1,0 +1,15 @@
+ID: 29
+Alphabet: a
+States: 0, 1, 2, 3, 4, 5
+Initial States: 1
+Final States: 0, 3
+Transitions:
+1a2
+2a3
+3a0
+1a4
+4a5
+5a0
+0a4
+3a2
+4a3

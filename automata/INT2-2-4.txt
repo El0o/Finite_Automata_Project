@@ -1,0 +1,7 @@
+ID: 4
+Alphabet: a
+States: 0, 1
+Initial States: 0
+Final States: 
+Transitions:
+0a1

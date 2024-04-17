@@ -1,0 +1,10 @@
+ID: 10
+Alphabet: a, b
+States: 0, 1, 2, 3, 4
+Initial States: 0
+Final States: 0
+Transitions:
+0a1
+2a3
+3a4
+4a0

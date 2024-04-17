@@ -1,0 +1,11 @@
+ID: 27
+Alphabet: a, b
+States: 0, 1, 2
+Initial States: 1
+Final States: 0
+Transitions:
+1a2
+1b2
+2b0
+0a0
+0b0

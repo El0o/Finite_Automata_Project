@@ -1,0 +1,10 @@
+ID: 12
+Alphabet: a, b, c, d
+States: 0, 1
+Initial States: 1
+Final States: 1
+Transitions:
+1a2
+1c0
+0b0
+0d1
