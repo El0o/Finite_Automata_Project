@@ -4,7 +4,7 @@ def is_deterministic(automaton):
     if len(automaton["initial_states"]) > 1:
         return 0
     for elt in automaton["transitions"]:
-        for comp in automaton["transitions"]:
+        for comp in automaton["transitions"][automaton["transitions"].index(elt):]:
             if (elt[:2] == comp[:2]) and (elt != comp):
                 return 0
     return 1

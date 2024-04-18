@@ -20,6 +20,55 @@ def standardisation(automaton):
     return a_standard
 
 
+def determinization(automaton):
+    """
+    Returns the deterministic version of the automaton
+    """
+    a_deter = automaton
+    new_states = []
+    new_transitions = []
+    new_finals = []
+
+    to_treat_states = [a_deter["initial_states"]]
+    for t in a_deter["transitions"]:
+        if "$" in t:
+            a_deter["alphabet"].append("$")
+            break
+
+    nb_state = 0
+    while nb_state != len(to_treat_states):
+        current_state = to_treat_states[nb_state]
+        for a in a_deter["alphabet"]:
+            temp = []
+            for i in current_state:
+                for t in a_deter["transitions"]:
+                    if t[0] == i and t[1] == a:
+                        if t[2] not in temp:
+                            temp.append(t[2])
+            if temp and temp not in to_treat_states:
+                to_treat_states.append(temp)
+            if temp:
+                new_transitions.append("{}{}{}".format(nb_state, a, to_treat_states.index(temp)))
+        nb_state += 1
+
+    for i in range(len(to_treat_states)):
+        new_states.append("{}".format(i))
+
+    for f in a_deter["final_states"]:
+        for s in to_treat_states:
+            if f in s and s not in new_finals:
+                new_finals.append(to_treat_states.index(s))
+
+    a_deter["initial_states"] = "0"
+    a_deter["states"] = new_states
+    a_deter["final_states"] = new_finals
+    a_deter["transitions"] = new_transitions
+    if "$" in a_deter["alphabet"]:
+        a_deter["alphabet"].remove("$")
+
+    return a_deter
+
+
 def completion(automaton):
     """
     Returns the complete version of the automaton
@@ -54,7 +103,6 @@ def completion(automaton):
 
     add = []
     for n in range(len(new_state)):
-        toad = ""
         for l in range(1, len(new_state[n])):
             toad = new_state[n][0]
             toad = toad + new_state[n][l]
