@@ -1,6 +1,8 @@
 # Interface of the software
 from FA_files_management import *
 from FA_display import *
+from FA_operations import *
+from FA_checks import *
 
 print("Launching...")
 automata = import_all_automata()
