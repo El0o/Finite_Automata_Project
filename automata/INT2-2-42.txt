@@ -12,6 +12,7 @@ Transitions:
 0b1
 1a0
 1b2
+2a1
 2b4
 2c4
 4a4

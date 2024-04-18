@@ -5,6 +5,9 @@ Initial States: 0
 Final States: 0
 Transitions:
 0a1
+1a2
+1b2
 2a3
 3a4
+3b4
 4a0

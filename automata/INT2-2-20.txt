@@ -8,7 +8,7 @@ Transitions:
 2b3
 3c4
 4d5
-5d0
+0d5
 6a2
 7b3
 8c4

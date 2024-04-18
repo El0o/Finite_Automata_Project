@@ -1,6 +1,6 @@
 ID: 11
 Alphabet: a, b
-States: 0, 1, 2, 3, 4, 5
+States: 0, 1, 2, 3
 Initial States: 0
 Final States: 2
 Transitions:

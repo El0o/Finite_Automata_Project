@@ -1,6 +1,6 @@
 ID: 43
-Alphabet: a, 
-States: 0, 1, 2, 3, 4, 5, 6, 7
+Alphabet: a, b
+States: 0, 1, 2
 Initial States: 0
 Final States: 2
 Transitions:
@@ -9,5 +9,4 @@ Transitions:
 0b1
 2a2
 2b2
-0b1
 1a2
