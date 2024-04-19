@@ -31,7 +31,7 @@ def is_complete(automaton):
     """
     if not is_deterministic(automaton):
         return 0
-    if len(automaton["transitions"]) == (len(automaton["alphabet"])*len(automaton["states"])):
+    if len(automaton["transitions"]) >= (len(automaton["alphabet"])*len(automaton["states"])):
         return 1
     else:
         return 0
@@ -39,9 +39,9 @@ def is_complete(automaton):
 
 def yes_no(boolean):
     """
-    Translate a boolean into a comprehensible string.
+    Translates a boolean into a comprehensible string
     """
     if boolean:
         return "Yes"
     else:
-        return "No"
+        return "No "
