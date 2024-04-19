@@ -19,9 +19,9 @@ while True:
     else:
         print("Automaton n°{id}:".format(id=auto["id"]))
         display_table(auto)
-        print("\nStandard: {ans}".format(ans=yes_no(is_standard(auto["id"]))), end="    ")
-        print("Complete: {ans}".format(ans=yes_no(is_complete(auto["id"]))), end="    ")
-        print("Deterministic: {ans}".format(ans=yes_no(is_deterministic(auto["id"]))), end="    ")
+        print("\nStandard: {ans}".format(ans=yes_no(is_standard(auto))), end="    ")
+        print("Complete: {ans}".format(ans=yes_no(is_complete(auto))), end="    ")
+        print("Deterministic: {ans}".format(ans=yes_no(is_deterministic(auto))), end="    ")
         print("Minimal: {ans}".format(ans="?"))
 
         _ = input("\nSoon : menu with what you can do (press [Enter ↵] to return to main menu)")
