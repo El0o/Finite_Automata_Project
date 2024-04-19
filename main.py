@@ -36,7 +36,7 @@ while True:
         not_done_yet = True
         while not_done_yet:
             # Displaying the automaton, its info and the menu's options
-            print(f"\nAutomaton n°{auto['id']}")
+            print(f"Automaton n°{auto['id']}:\n")
             display_table(auto)
             display_checks_info(auto)
 
@@ -56,6 +56,7 @@ while True:
                 if entry in ["S", "D", "C", "M", "I", "W", "T", "R", "P"]:
                     break
                 print("Statement not recognized. Please type one of the above letter to do something.")
+
             match entry:
                 case "S":  # Standardization
                     if is_standard(auto):
@@ -65,6 +66,7 @@ while True:
                         previous_auto.append(auto)
                         auto = standardisation(auto)
                         print("Standardization done.\n")
+
                 case "D":  # Determinization
                     if is_deterministic(auto):
                         print("This automaton is already deterministic.\n")
@@ -73,6 +75,7 @@ while True:
                         previous_auto.append(auto)
                         auto = determinization(auto)
                         print("Determinazation done.\n")
+
                 case "C":  # Completion
                     if is_complete(auto):
                         print("This automaton is already complete.\n")
@@ -81,18 +84,23 @@ while True:
                         previous_auto.append(auto)
                         auto = completion(auto)
                         print("Completion done.\n")
+
                 case "M":  # Minimization
                     print("Minimization stuff")  # Fonctions en cours de développement
+
                 case "I":  # Building of the complementary automaton
                     print("Complementary stuff")  # Fonctions en cours de développement
+
                 case "W":  # Word recognition menu
                     print("Word recognition stuff")  # À faire
+
                 case "T":  # Text file creation
                     if fond_txt(auto):
                         print("Automaton's text file already exists.\n")
                     else:
                         export_automaton(auto)
                         automata.append(auto)
+
                 case "R":  # What needs to be done before coming back to main menu
                     # First, ask for every previous & current automaton if they need to be saved
                     for unsaved in reversed(previous_auto + [auto]):
@@ -109,6 +117,7 @@ while True:
                                     print("Statement not recognized. Please type [Y] or [N].")
                     # Then quit the automaton menu
                     not_done_yet = False
+
                 case "P":  # What needs to be done before going back to the previous automaton
                     # If no previous automaton, does nothing
                     if previous_auto != []:
