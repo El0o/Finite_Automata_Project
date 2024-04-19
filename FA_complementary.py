@@ -1,4 +1,3 @@
-from FA_lstest import automata
 from FA_operations import *
 from FA_checks import *
 from FA_recognise import *
