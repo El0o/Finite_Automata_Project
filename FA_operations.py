@@ -1,10 +1,12 @@
 # Functions that operate on an automaton and returns another one on which the operation is done
+from FA_checks import is_deterministic
+
 
 def standardisation(automaton):
     """
     Returns the standard version of the automaton
     """
-    a_standard = automaton
+    a_standard = automaton.copy()
     b = len(a_standard['transitions'])
     for k in range(len(a_standard['initial_states'])):
         for i in range(b):
@@ -24,7 +26,7 @@ def determinization(automaton):
     """
     Returns the deterministic version of the automaton
     """
-    a_deter = automaton
+    a_deter = automaton.copy()
     new_states = []
     new_transitions = []
     new_finals = []
@@ -65,7 +67,7 @@ def determinization(automaton):
     a_deter["transitions"] = new_transitions
     if "$" in a_deter["alphabet"]:
         a_deter["alphabet"].remove("$")
-
+    a_deter["id"] = automaton["id"] + "D"
     return a_deter
 
 
@@ -73,7 +75,12 @@ def completion(automaton):
     """
     Returns the complete version of the automaton
     """
-    a_complete = automaton
+    a_complete = automaton.copy()
+
+    # Check if the automaton is deterministic
+    if not is_deterministic(a_complete):
+        a_complete = determinization(a_complete)
+
     # Creation of a list that will keep track of which states we need to add
     new_state = []
 
@@ -106,7 +113,7 @@ def completion(automaton):
         for l in range(1, len(new_state[n])):
             toad = new_state[n][0]
             toad = toad + new_state[n][l]
-            toad = toad + "new_states"
+            toad = toad + "P"
             add.append(toad)
 
     for o in a_complete['alphabet']:

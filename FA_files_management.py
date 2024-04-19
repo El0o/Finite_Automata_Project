@@ -1,11 +1,12 @@
 # Functions to handle the creation and importation of .txt files
 
-from os import listdir, path
+from FA_lst import automata as og_automata
+from os import listdir, path, remove
 
 
 def export_automaton(automaton):
     """
-    Creates (or modifies if already existing) a .txt file for a given automaton
+    Creates (or modifies if already existing) a text file for a given automaton
     """
     # Defines file name
     filename = f"automata/INT2-2-{automaton['id']}.txt"
@@ -25,7 +26,7 @@ def export_automaton(automaton):
 
 def import_automaton(filename):
     """
-    Returns the automaton stored in the .txt file as a python dictionary
+    Returns the automaton stored in the given text file as a python dictionary
     """
     # Reads the content of the file
     with open(filename, "r") as file:
@@ -62,11 +63,42 @@ def import_automaton(filename):
 
 def import_all_automata():
     """
-    Returns a dictionary list of every automaton present in the "automata" folder
+    Returns a dictionary list of every automata present in the "automata" directory
     """
     automata_lst = []
     for filename in listdir("automata"):
-        f = path.join("automata", filename)
-        automata_lst.append(import_automaton(f))
+        file = path.join("automata", filename)
+        automata_lst.append(import_automaton(file))
     print("Automata successfully imported.")
     return automata_lst
+
+
+def get_automaton(automata_lst, a_id):
+    """
+    Returns the automaton if present in the automata list, otherwise returns None
+    """
+    automaton = next((a for a in automata_lst if a["id"] == a_id), None)
+    return automaton
+
+
+def fond_txt(automaton):
+    """
+    Returns true if the text version of the given automaton is found in the "automata" directory
+    """
+    for filename in listdir("automata"):
+        with open(path.join("automata", filename), "r") as file:
+            id_line = file.readline()
+            if id_line.split(":")[1].strip() == automaton["id"]:
+                return 1
+    return 0
+
+
+def reset_automata_folder():
+    """
+    Deletes all text files and replaces them with the original test automata (given for this project)
+    """
+    for filename in listdir("automata"):
+        file = path.join("automata", filename)
+        remove(file)
+    for automaton in og_automata:
+        export_automaton(automaton)

@@ -1,6 +1,7 @@
 # Function to display the tables
 
 from texttable import Texttable
+from FA_checks import *
 
 
 def display_table(automaton):
@@ -29,18 +30,28 @@ def display_table(automaton):
         else:
             state_cell += " "
 
-        state_cell += "   {s}".format(s=state)
+        state_cell += f"   {state}"
         new_row.append(state_cell)
         for a in automaton["alphabet"]:
             cell = ""
             for tr in automaton["transitions"]:
                 if (tr[0] == state) and (tr[1] == a):
-                    cell += "{s},".format(s=tr[2])
+                    cell += f"{tr[2]},"
             if cell != "":
                 cell = cell[:-1]
             new_row.append(cell)
         table.add_row(new_row)
 
     print(table.draw())
+
+
+def display_checks_info(automaton):
+    """
+    Displays the information
+    """
+    print(f"\nStandard: {yes_no(is_standard(automaton))}", end="    ")
+    print(f"Deterministic: {yes_no(is_deterministic(automaton))}", end="    ")
+    print(f"Complete: {yes_no(is_complete(automaton))}", end="    ")
+    print("Minimal: ?\n")
 
 
