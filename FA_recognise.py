@@ -48,6 +48,8 @@ def word_recognition (automaton):
     print("Write : end if you want to stop testing")
     while word != "end":
         word = read_word()
+        if word == "end":
+            break
         test = recognize_word(automaton,word)
         if test == True:
             print("The word",word,"is recognised by the automaton n°",automaton['id'])
