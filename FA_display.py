@@ -55,3 +55,11 @@ def display_checks_info(automaton):
     print("Minimal: ?\n")
 
 
+def yes_no(boolean):
+    """
+    Translates a boolean into a comprehensible string
+    """
+    if boolean:
+        return "Yes"
+    else:
+        return "No "

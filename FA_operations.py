@@ -16,7 +16,7 @@ def standardization(automaton):
                 a_standard['transitions'][i] = a_standard['transitions'][i] + keep
     new_tr = []
     for j in a_standard['transitions']:
-        if not j in new_tr:
+        if j not in new_tr:
             new_tr.append(j)
     a_standard['transitions'] = new_tr
     a_standard['initial_states'] = "i"
@@ -98,7 +98,7 @@ def completion(automaton):
 
     # Organisation of the transition that will be added
 
-        # We start with a list that will keep track of the initial state and the letter of the transition
+    # We start with a list that will keep track of the initial state and the letter of the transition
 
     for k in range(len(new_state)):
         p = []
@@ -140,7 +140,7 @@ def complementary_automaton(automaton):
     else:
         inverse_automaton = automaton.copy()
     new_final = []
-    for i in range(len(inverse_automaton['states'])-1):
+    for i in range(len(inverse_automaton['states']) - 1):
         if not inverse_automaton['states'][i] in inverse_automaton['final_states']:
             new_final.append(i)
     if "P" in inverse_automaton['states']:

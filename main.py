@@ -3,6 +3,7 @@ from FA_files_management import *
 from FA_display import *
 from FA_operations import *
 from FA_checks import *
+from FA_recognise import *
 
 
 def main():
@@ -103,7 +104,9 @@ def main():
                         print("Complementary automaton built.\n")
 
                     case "W":  # Word recognition menu
-                        print("Word recognition stuff")  # À faire
+                        print("Entering word recognition...")
+                        word_recognition(auto)
+                        print("\nExiting word recognition.")
 
                     case "T":  # Text file creation
                         if fond_txt(auto):
