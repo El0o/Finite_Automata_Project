@@ -28,37 +28,31 @@ def import_automaton(filename):
     """
     Returns the automaton stored in the given text file as a python dictionary
     """
-    # Reads the content of the file
+    # Reads the entire file
     with open(filename, "r") as file:
         lines = file.readlines()
 
-    # Extracts automaton information from the lines
-    automaton_info = {}
+    automaton = {}
     transitions = []
+    # Creates the keys of the dictionary and dispatches the lines' information correctly
     for line in lines:
         line = line.strip()
         if line.startswith("ID:"):
-            automaton_info["id"] = line.split(":")[1].strip()
-        elif line.startswith("States:"):
-            automaton_info["states"] = line.split(":")[1].strip().split(", ")
+            automaton["id"] = line.split(":")[1].strip()
         elif line.startswith("Alphabet:"):
-            automaton_info["alphabet"] = line.split(":")[1].strip().split(", ")
+            automaton["alphabet"] = line.split(":")[1].strip().split(", ")
+        elif line.startswith("States:"):
+            automaton["states"] = line.split(":")[1].strip().split(", ")
         elif line.startswith("Initial States:"):
-            automaton_info["initial_states"] = line.split(":")[1].strip().split(", ")
+            automaton["initial_states"] = line.split(":")[1].strip().split(", ")
         elif line.startswith("Final States:"):
-            automaton_info["final_states"] = line.split(":")[1].strip().split(", ")
-        elif line == "Transitions:":
-            continue
+            automaton["final_states"] = line.split(":")[1].strip().split(", ")
         else:
             transitions.append(line)
 
-    # Formats transitions if necessary
-    if transitions:
-        automaton_info["transitions"] = transitions
-    else:
-        automaton_info["transitions"] = []
+    automaton["transitions"] = transitions
 
-    return automaton_info
+    return automaton
 
 
 def import_all_automata():
