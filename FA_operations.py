@@ -2,7 +2,7 @@
 from FA_checks import *
 
 
-def standardisation(automaton):
+def standardization(automaton):
     """
     Returns the standard version of the automaton
     """

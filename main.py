@@ -72,7 +72,7 @@ def main():
                         else:
                             print("Standardizing...\n")
                             previous_auto.append(auto)
-                            auto = standardisation(auto)
+                            auto = standardization(auto)
                             print("Standardization done.\n")
 
                     case "D":  # Determinization
