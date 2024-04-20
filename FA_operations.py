@@ -1,10 +1,12 @@
 # Functions that operate on an automaton and returns another one on which the operation is done
+from FA_checks import *
+
 
 def standardisation(automaton):
     """
     Returns the standard version of the automaton
     """
-    a_standard = automaton
+    a_standard = automaton.copy()
     b = len(a_standard['transitions'])
     for k in range(len(a_standard['initial_states'])):
         for i in range(b):
@@ -15,7 +17,7 @@ def standardisation(automaton):
     a_standard['initial_states'] = "i"
     init = ["i"]
     a_standard["states"] = a_standard["states"] + init
-    a_standard["id"] = automaton["id"] + "S"
+    a_standard["id"] = a_standard["id"] + "S"
 
     return a_standard
 
@@ -24,7 +26,7 @@ def determinization(automaton):
     """
     Returns the deterministic version of the automaton
     """
-    a_deter = automaton
+    a_deter = automaton.copy()
     new_states = []
     new_transitions = []
     new_finals = []
@@ -66,6 +68,8 @@ def determinization(automaton):
     if "$" in a_deter["alphabet"]:
         a_deter["alphabet"].remove("$")
 
+    a_deter["id"] = a_deter["id"] + "D"
+
     return a_deter
 
 
@@ -73,7 +77,10 @@ def completion(automaton):
     """
     Returns the complete version of the automaton
     """
-    a_complete = automaton
+    if not is_deterministic(automaton):
+        a_complete = determinization(automaton)
+    else:
+        a_complete = automaton.copy()
     # Creation of a list that will keep track of which states we need to add
     new_state = []
 
@@ -117,15 +124,23 @@ def completion(automaton):
 
     a_complete['transitions'] = a_complete['transitions'] + add
     a_complete['states'].append("P")
-    a_complete["id"] = automaton["id"] + "C"
+    a_complete["id"] = a_complete["id"] + "C"
 
     return a_complete
 
-def determinization_and_completion_automaton (automaton):
-    return completion(determinization(automaton))
 
+def complementary_automaton(automaton):
+    if not is_complete(automaton):
+        inverse_automaton = completion(automaton)
+    else:
+        inverse_automaton = automaton.copy()
+    new_final = []
+    for i in range(len(inverse_automaton['states'])-1):
+        if not inverse_automaton['states'][i] in inverse_automaton['final_states']:
+            new_final.append(i)
+    if "P" in inverse_automaton['states']:
+        new_final.append("P")
+    inverse_automaton['final_states'] = new_final
+    inverse_automaton['id'] = inverse_automaton['id'] + "I"
 
-
-
-
-
+    return inverse_automaton
