@@ -16,7 +16,6 @@ def standardization(automaton):
                 a_standard['transitions'][i] = a_standard['transitions'][i] + keep
     new_tr = []
     for j in a_standard['transitions']:
-        print(j)
         if not j in new_tr:
             new_tr.append(j)
     a_standard['transitions'] = new_tr
