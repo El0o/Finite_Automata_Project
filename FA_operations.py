@@ -141,6 +141,6 @@ def complementary_automaton(automaton):
     if "P" in inverse_automaton['states']:
         new_final.append("P")
     inverse_automaton['final_states'] = new_final
-    inverse_automaton['id'] = inverse_automaton['id'] + "I"
+    inverse_automaton['id'] = automaton['id'] + "I"
 
     return inverse_automaton

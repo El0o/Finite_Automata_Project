@@ -97,7 +97,10 @@ def main():
                         print("Minimization stuff")  # Fonctions en cours de développement
 
                     case "I":  # Building of the complementary automaton
-                        print("Complementary stuff")  # Fonctions en cours de développement
+                        print("Building...\n")
+                        previous_auto.append(auto)
+                        auto = complementary_automaton(auto)
+                        print("Complementary automaton built.\n")
 
                     case "W":  # Word recognition menu
                         print("Word recognition stuff")  # À faire
