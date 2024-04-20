@@ -9,7 +9,7 @@ def main():
     """
     The main program.
     """
-    print("Launching...")
+
     # Importing the automata from the text files
     automata = import_all_automata()
 
@@ -49,14 +49,14 @@ def main():
                 display_checks_info(auto)
 
                 print("[S] - Standardize this automaton          ", end="  ")
-                print("[D] - Determinize this automaton          ")
-                print("[C] - Complete this automaton             ", end="  ")
-                print("[M] - Minimize this automaton             ")
+                print("[D] - Determinize this automaton          ", end="  ")
+                print("[C] - Complete this automaton             ")
+                print("[M] - Minimize this automaton             ", end="  ")
                 print("[I] - Build the complementary automaton   ", end="  ")
                 print("[W] - Enter word recognition mode         ")
                 print("[T] - Export this automaton in a text file", end="  ")
                 if previous_auto != []:
-                    print("[P] - Return to previous automaton        ")
+                    print("[P] - Return to previous automaton        ", end="  ")
                 print("[R] - Return to automaton selection       ")
 
                 while True:
@@ -149,6 +149,7 @@ def main():
                             previous_auto.pop()
 
 
+print("Launching...")
 try:
     main()
 except KeyboardInterrupt:
