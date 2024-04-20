@@ -14,6 +14,12 @@ def standardization(automaton):
                 keep = a_standard['transitions'][i][1] + a_standard['transitions'][i][2]
                 a_standard['transitions'][i] = "i"
                 a_standard['transitions'][i] = a_standard['transitions'][i] + keep
+    new_tr = []
+    for j in a_standard['transitions']:
+        print(j)
+        if not j in new_tr:
+            new_tr.append(j)
+    a_standard['transitions'] = new_tr
     a_standard['initial_states'] = "i"
     init = ["i"]
     a_standard["states"] = a_standard["states"] + init
