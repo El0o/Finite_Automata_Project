@@ -19,7 +19,7 @@ def export_automaton(automaton):
         file.write(f"Final States: {', '.join(automaton['final_states'])}\n")
         file.write("Transitions:\n")
         for transition in automaton['transitions']:
-            file.write(f"{transition}\n")
+            file.write(f"{' : '.join(transition)}\n")
 
     print(f"Automaton successfully saved in {filename}")
 
@@ -47,9 +47,10 @@ def import_automaton(filename):
             automaton["initial_states"] = line.split(":")[1].strip().split(", ")
         elif line.startswith("Final States:"):
             automaton["final_states"] = line.split(":")[1].strip().split(", ")
+        elif line.startswith("Transitions:"):
+            continue
         else:
-            transitions.append(line)
-
+            transitions.append(line.strip().split(" : "))
     automaton["transitions"] = transitions
 
     return automaton
