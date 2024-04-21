@@ -7,13 +7,12 @@ def standardization(automaton):
     Returns the standard version of the automaton
     """
     a_standard = automaton.copy()
-    b = len(a_standard['transitions'])
+    nb_tr = len(a_standard['transitions'])
     for k in range(len(a_standard['initial_states'])):
-        for i in range(b):
+        for i in range(nb_tr):
             if a_standard['transitions'][i][0] == a_standard['initial_states'][k]:
-                keep = a_standard['transitions'][i][1] + a_standard['transitions'][i][2]
-                a_standard['transitions'][i] = "i"
-                a_standard['transitions'][i] = a_standard['transitions'][i] + keep
+                keep = [a_standard['transitions'][i][1], a_standard['transitions'][i][2]]
+                a_standard['transitions'][i] = ["i", keep[0], keep[1]]
     new_tr = []
     for j in a_standard['transitions']:
         if j not in new_tr:
@@ -82,10 +81,7 @@ def completion(automaton):
     """
     Returns the complete version of the automaton
     """
-    if not is_deterministic(automaton):
-        a_complete = determinization(automaton)
-    else:
-        a_complete = automaton.copy()
+    a_complete = automaton.copy()
     # Creation of a list that will keep track of which states we need to add
     new_state = []
 
@@ -113,21 +109,21 @@ def completion(automaton):
         # Finally we create the new transitions,
         # the ones that start with an existing state and the ones that comes from P (new_state)
 
-    add = []
+    new_tr = []
+
     for n in range(len(new_state)):
         for l in range(1, len(new_state[n])):
-            toad = new_state[n][0]
-            toad = toad + new_state[n][l]
-            toad = toad + "P"
-            add.append(toad)
+            toad = [new_state[n][0], new_state[n][l], "P"]
+            new_tr.append(toad)
+
 
     for o in a_complete['alphabet']:
-        toad = "P" + o + "P"
-        add.append(toad)
+        toad = ["P", o, "P"]
+        new_tr.append(toad)
 
         # We update our automaton
-
-    a_complete['transitions'] = a_complete['transitions'] + add
+    #a_complete['transitions'] = a_complete['transitions'] + new_tr
+    a_complete['transitions'] += new_tr
     a_complete['states'].append("P")
     a_complete["id"] = a_complete["id"] + "C"
 

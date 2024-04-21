@@ -75,6 +75,19 @@ def main():
                     case "C":  # Completion
                         if is_complete(auto):
                             print("This automaton is already complete.\n")
+                        elif not is_deterministic(auto):
+                            while True:
+                                entry = input(f"This automaton is not deterministic. Do you want to determinize and complete it ? (y/n)\n>> ").upper()
+                                if entry == "Y" or entry == "YES":
+                                    print("Determinazing & completing...\n")
+                                    previous_auto.append(auto)
+                                    auto = completion(determinization(auto))
+                                    print("Determinazation & completion done.\n")
+                                    break
+                                elif entry == "N" or entry == "NO":
+                                    break
+                                else:
+                                    print("Statement not recognized. Please type [Y] or [N].")
                         else:
                             print("Completing...\n")
                             previous_auto.append(auto)
@@ -147,3 +160,4 @@ try:
     main()
 except KeyboardInterrupt:
     print("\nGoodbye !")
+
