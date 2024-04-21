@@ -21,7 +21,7 @@ def standardization(automaton):
     a_standard['transitions'] = new_tr
     a_standard['initial_states'] = "i"
     init = ["i"]
-    a_standard["states"] = a_standard["states"] + init
+    a_standard["states"] = init + a_standard["states"]
     a_standard["id"] = a_standard["id"] + "S"
 
     return a_standard
