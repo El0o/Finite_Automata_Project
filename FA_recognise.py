@@ -1,18 +1,26 @@
-# Reading of a word
+# All functions related to word recognition
+
 def read_word():
+    """
+    Reads a word
+    """
     return input("Type a word: ")
 
 
-# Function that change a word, we remove the first letter of it
 def new_word(word):
+    """
+    Returns the word minus its first letter
+    """
     nword = ""
     for i in range(1, len(word)):
         nword += word[i]
     return nword
 
 
-# Function that recognise if a word is recognised by a given automaton
 def recognize_word(automaton, word):
+    """
+    Returns true if the word is recognised by the given automaton
+    """
     lenth = len(word)
     lastplace = ""
     initword = word
@@ -47,13 +55,15 @@ def recognize_word(automaton, word):
         return True
 
 
-# The main function that will permit to continuously ask the user to enter a word until he wants to stop.
 def word_recognition(automaton):
+    """
+    Enters word recognition mode (continuously ask the user for a word to recognize until they type [/end]
+    """
     word = ""
-    print("Write [end] to exit word recognition.")
-    while word != "end":
+    print("Write [/end] to exit word recognition.")
+    while word != "/end":
         word = read_word()
-        if word == "end":
+        if word == "/end":
             break
         test = recognize_word(automaton, word)
         if test:
