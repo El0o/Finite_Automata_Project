@@ -142,3 +142,123 @@ def complementary_automaton(automaton):
     inverse_automaton['id'] = automaton['id'] + "I"
 
     return inverse_automaton
+
+
+def are_distinguishable(elt1, elt2, P_previous, automaton):
+    alphabet = automaton["alphabet"].copy()
+    for a in alphabet:
+        t1 = []
+        t2 = []
+        i = 0
+        while (t1 == [] or t2 == []) and (i < len(automaton["transitions"])):
+            if automaton["transitions"][i][1] == a:
+                if automaton["transitions"][i][0] == elt1:
+                    t1 = [automaton["transitions"][i][2]]
+                    i += 1
+                if automaton["transitions"][i][0] == elt2:
+                    t2 = [automaton["transitions"][i][2]]
+                    i += 1
+                else:
+                    i += 1
+
+        for p in P_previous:
+            if t1 in p:
+                t1 = P_previous.index(p)
+                break
+        for p in P_previous:
+            if t2 in p:
+                t2 = P_previous.index(p)
+                break
+
+        if t1 != t2:
+            return 1
+
+    return 0
+
+
+def minimization(automaton):
+    """
+    Return the minimal version of the automaton
+    """
+    if is_complete(automaton):
+        a_mini = automaton.copy()
+    else:
+        a_mini = completion(automaton).copy()
+
+    P_next = [automaton["final_states"].copy(), []]
+    for s in automaton["states"]:
+        if s not in automaton["final_states"]:
+            P_next[1].append(s)
+    P_previous = []
+
+    while P_previous != P_next:
+        P_previous = P_next
+        P_next = []
+
+        for partition in P_previous:
+            if len(partition) > 1:
+                for elt1 in partition:
+                    for elt2 in partition[partition.index(elt1) + 1:]:
+
+                        if are_distinguishable(elt1, elt2, P_previous, a_mini):
+                            is_in1 = 0
+                            is_in2 = 0
+                            for p in P_next:
+                                if elt1 in p:
+                                    is_in1 = 1
+                                elif elt2 in p:
+                                    is_in2 = 1
+                                if is_in1 and is_in2:
+                                    break
+                            if not is_in1:
+                                P_next.append(elt1)
+                            if not is_in2:
+                                P_next.append(elt2)
+
+                        else:
+                            is_in1 = 0
+                            is_in2 = 0
+                            for p in P_next:
+                                if elt1 in p:
+                                    is_in1 = P_next.index(p)
+                                    break
+                                elif elt2 in p:
+                                    is_in2 = P_next.index(p)
+                                    break
+                            if is_in1 and elt2 not in P_next[is_in1]:
+                                P_next[is_in1].append(elt2)
+                            elif is_in2 and elt1 not in P_next[is_in2]:
+                                P_next[is_in2].append(elt1)
+                            else:
+                                P_next.append([elt1, elt2])
+
+            else:
+                P_next.append(partition)
+
+    a_mini["id"] = a_mini["id"][0] + "MCD"
+    a_mini["states"] = []
+    for i in range(len(P_next)):
+        if a_mini["initial_states"] in P_next[i]:
+            a_mini["initial_states"] = "{}".format(i)
+        a_mini["states"].append("{}".format(i))
+    new_finals = []
+    for f in a_mini["final_states"]:
+        for i in range(len(P_next)):
+            if f in P_next[i]:
+                new_finals.append("{}".format(i))
+    a_mini["final_states"] = new_finals
+
+    new_transitions = []
+    nb = 0
+    for i in range(len(P_next)):
+        for t in a_mini["transitions"]:
+            if P_next[i][0] == t[0]:
+                new_transitions[nb].append("{}", "{}".format(i, t[1]))
+                for j in range(len(P_next)):
+                    if t[2] in P_next[j]:
+                        new_transitions[nb].append("{}".format(j))
+                        break
+                nb += 1
+    a_mini["transitions"] = new_transitions
+
+    return a_mini
