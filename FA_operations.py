@@ -116,13 +116,12 @@ def completion(automaton):
             toad = [new_state[n][0], new_state[n][l], "P"]
             new_tr.append(toad)
 
-
     for o in a_complete['alphabet']:
         toad = ["P", o, "P"]
         new_tr.append(toad)
 
         # We update our automaton
-    #a_complete['transitions'] = a_complete['transitions'] + new_tr
+
     a_complete['transitions'] += new_tr
     a_complete['states'].append("P")
     a_complete["id"] = a_complete["id"] + "C"
