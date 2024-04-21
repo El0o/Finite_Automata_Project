@@ -4,12 +4,12 @@ States: 0, 1, 2, 3, 4, 5
 Initial States: 1
 Final States: 0, 3
 Transitions:
-1a2
-2a3
-3a0
-1a4
-4a5
-5a0
-0a4
-3a2
-4a3
+1 : a : 2
+2 : a : 3
+3 : a : 0
+1 : a : 4
+4 : a : 5
+5 : a : 0
+0 : a : 4
+3 : a : 2
+4 : a : 3

@@ -4,9 +4,9 @@ States: 0, 1, 2
 Initial States: 0
 Final States: 2
 Transitions:
-0a0
-0b0
-0b1
-2a2
-2b2
-1a2
+0 : a : 0
+0 : b : 0
+0 : b : 1
+2 : a : 2
+2 : b : 2
+1 : a : 2

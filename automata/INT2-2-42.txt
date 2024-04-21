@@ -4,17 +4,17 @@ States: 0, 1, 2, 3, 4
 Initial States: 1
 Final States: 1
 Transitions:
-3a3
-3b3
-3c3
-0a3
-0c3
-0b1
-1a0
-1b2
-2a1
-2b4
-2c4
-4a4
-4b4
-4c4
+3 : a : 3
+3 : b : 3
+3 : c : 3
+0 : a : 3
+0 : c : 3
+0 : b : 1
+1 : a : 0
+1 : b : 2
+2 : a : 1
+2 : b : 4
+2 : c : 4
+4 : a : 4
+4 : b : 4
+4 : c : 4

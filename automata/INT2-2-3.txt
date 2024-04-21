@@ -4,4 +4,4 @@ States: 0, 1
 Initial States: 0
 Final States: 1
 Transitions:
-0a1
+0 : a : 1

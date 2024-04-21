@@ -11,8 +11,9 @@ def get_table(automaton):
     table = Texttable()
     table.set_deco(Texttable.HLINES | Texttable.VLINES)
     table.set_chars(['—', '│', '┼', '—'])
-    align = ["r"] + ["c"]*len(automaton["alphabet"])
+    align = ["r"] + ["c"] * len(automaton["alphabet"])
     table.set_cols_align(align)
+
     head = ["  "]
     for elt in automaton["alphabet"]:
         head.append(elt)
@@ -85,7 +86,7 @@ def display_automaton_menu(automaton, previous):
 
     displayer.header([f"Automaton n°{automaton['id']}:\n", " "])
 
-    menu_options  = "[S] - Standardize this automaton            "
+    menu_options = "[S] - Standardize this automaton            "
     menu_options += "[D] - Determinize this automaton          \n"
     menu_options += "[C] - Complete this automaton               "
     menu_options += "[M] - Minimize this automaton             \n"
@@ -101,5 +102,3 @@ def display_automaton_menu(automaton, previous):
     displayer.add_row([get_table(automaton), col2])
 
     print(displayer.draw())
-
-
