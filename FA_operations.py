@@ -36,12 +36,9 @@ def determinization(automaton):
     new_finals = []
 
     to_treat_states = [a_deter["initial_states"]]
-    for t in a_deter["transitions"]:
-        if "$" in t:
-            a_deter["alphabet"].append("$")
-            break
 
     nb_state = 0
+    delimiter = "."
     while nb_state != len(to_treat_states):
         current_state = to_treat_states[nb_state]
         for a in a_deter["alphabet"]:
@@ -54,24 +51,25 @@ def determinization(automaton):
             if temp and temp not in to_treat_states:
                 to_treat_states.append(temp)
             if temp:
-                new_transitions.append("{}{}{}".format(nb_state, a, to_treat_states.index(temp)))
+                start = delimiter.join(current_state)
+                target = delimiter.join(temp)
+                new_transitions.append("{}{}{}".format(start, a, target))
         nb_state += 1
 
-    for i in range(len(to_treat_states)):
-        new_states.append("{}".format(i))
+    for s in to_treat_states:
+        state = delimiter.join(s)
+        new_states.append("{}".format(state))
 
     for f in a_deter["final_states"]:
         for s in to_treat_states:
             if f in s and s not in new_finals:
-                new_finals.append(to_treat_states.index(s))
+                final = delimiter.join(s)
+                new_finals.append(final)
 
-    a_deter["initial_states"] = "0"
+    a_deter["initial_states"] = delimiter.join(to_treat_states[0])
     a_deter["states"] = new_states
     a_deter["final_states"] = new_finals
     a_deter["transitions"] = new_transitions
-    if "$" in a_deter["alphabet"]:
-        a_deter["alphabet"].remove("$")
-
     a_deter["id"] = a_deter["id"] + "D"
 
     return a_deter

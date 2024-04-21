@@ -3,8 +3,8 @@
 
 def is_standard(automaton, explicit_mode=False):
     """
-    Returns true if the automaton is standard. If explicit mode is on, then the function returns a list[bool, str], bool
-    being the answer and str the explanation.
+    Returns true if the automaton is standard. If explicit mode is on, then the function returns
+    a list[bool, str], bool being the answer and str the explanation.
     """
 
     if len(automaton["initial_states"]) > 1:
@@ -26,8 +26,8 @@ def is_standard(automaton, explicit_mode=False):
 
 def is_deterministic(automaton, explicit_mode=False):
     """
-    Returns true if the automaton is deterministic. If explicit mode is on, then the function returns a list[bool, str], bool
-    being the answer and str the explanation.
+    Returns true if the automaton is deterministic. If explicit mode is on, then the function returns
+    a list[bool, str], bool being the answer and str the explanation.
     """
 
     if len(automaton["initial_states"]) > 1:
@@ -39,19 +39,21 @@ def is_deterministic(automaton, explicit_mode=False):
         for comp in automaton["transitions"][automaton["transitions"].index(elt):]:
             if (elt[:2] == comp[:2]) and (elt != comp):
                 if explicit_mode:
-                    output = [False, "Multiple transitions from the same state with the same letter towards different states were found."]
+                    output = [False, "Multiple transitions from the same state with the same letter towards "
+                                     "different states were found."]
                     return output
                 return 0
     if explicit_mode:
-        output = [True, "There is a unique initial state and, for any state, every transitions uses a different letter."]
+        output = [True, "There is a unique initial state and, for any state, every transitions uses "
+                        "a different letter."]
         return output
     return 1
 
 
 def is_complete(automaton, explicit_mode=False):
     """
-    Returns true if the automaton is complete. If explicit mode is on, then the function returns a list[bool, str], bool
-    being the answer and str the explanation.
+    Returns true if the automaton is complete. If explicit mode is on, then the function returns
+    a list[bool, str], bool being the answer and str the explanation.
     """
 
     if not is_deterministic(automaton):
