@@ -32,7 +32,7 @@ Here, you can see something like this :
 
 ![img.png](img.png)
 
-On the left id displayed the table of transitions of the automaton, with initial and final states represented as arrows,
+On the left is displayed the table of transitions of the automaton, with initial and final states represented as arrows,
 and at its right indications about the automaton's characteristics. Right underneath are your options from there. Type in 
 the letter indicated between the brackets to do the desired action.
 
