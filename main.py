@@ -45,20 +45,7 @@ def main():
             not_done_yet = True
             while not_done_yet:
                 # Displaying the automaton, its info and the menu's options
-                print(f"Automaton n°{auto['id']}:\n")
-                display_table(auto)
-                display_checks_info(auto)
-
-                print("[S] - Standardize this automaton          ", end="  ")
-                print("[D] - Determinize this automaton          ", end="  ")
-                print("[C] - Complete this automaton             ")
-                print("[M] - Minimize this automaton             ", end="  ")
-                print("[I] - Build the complementary automaton   ", end="  ")
-                print("[W] - Enter word recognition mode         ")
-                print("[T] - Export this automaton in a text file", end="  ")
-                if previous_auto != []:
-                    print("[P] - Return to previous automaton        ", end="  ")
-                print("[R] - Return to automaton selection       ")
+                display_automaton_menu(auto, previous_auto != [])
 
                 while True:
                     entry = input("\n>> ").upper()
@@ -106,7 +93,7 @@ def main():
                     case "W":  # Word recognition menu
                         print("Entering word recognition...")
                         word_recognition(auto)
-                        print("\nExiting word recognition.")
+                        print("\nExiting word recognition...")
 
                     case "T":  # Text file creation
                         if fond_txt(auto):
