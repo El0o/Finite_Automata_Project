@@ -50,7 +50,7 @@ have the suffix "I".
 
 #### Option `[W]`
 Enters word recognition mode. From there, you can type any word and see if the word is recognised or not by the automaton.
-Type in `/end` to exit.
+Type in `/end` to exit. Carefull : the input is now case-sensitive !
 
 #### Option `[T]`
 Will, if it does not already exist, save the current automaton as a text file inside the automata folder.
@@ -58,7 +58,8 @@ Will, if it does not already exist, save the current automaton as a text file in
 > you if you want to save it.
 
 #### Option `[R]` and `[P]`
-Returns respectfully to the main menu or to the previously displayed automaton.
+Returns respectfully to the main menu or to the previously displayed automaton. Option `[P]` doesn't show when you reach 
+the first automaton you were treating.
 
 ## License
 
