@@ -48,12 +48,12 @@ def get_table(automaton):
 
 def yes_no(boolean):
     """
-    Translates a boolean into a comprehensible string
+    Translates a boolean into a check or a cross symbol
     """
     if boolean:
-        return "Yes."
+        return "✓"
     else:
-        return "No."
+        return "x"
 
 
 def get_checks_info(automaton):
@@ -62,13 +62,13 @@ def get_checks_info(automaton):
     """
 
     ans = is_standard(automaton, 1)
-    info = f"Standard: {yes_no(ans[0])} {ans[1]}\n\n"
+    info = f"Standard: {yes_no(ans[0])} | {ans[1]}\n\n"
 
     ans = is_deterministic(automaton, 1)
-    info += f"Deterministic: {yes_no(ans[0])} {ans[1]}\n\n"
+    info += f"Deterministic: {yes_no(ans[0])} | {ans[1]}\n\n"
 
     ans = is_complete(automaton, 1)
-    info += f"Complete: {yes_no(ans[0])} {ans[1]}"
+    info += f"Complete: {yes_no(ans[0])} | {ans[1]}"
 
     return info
 

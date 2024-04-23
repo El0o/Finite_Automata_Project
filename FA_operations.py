@@ -80,7 +80,10 @@ def completion(automaton):
     """
     Returns the complete version of the automaton
     """
-    a_complete = automaton.copy()
+    if not is_deterministic(automaton):
+        a_complete = determinization(automaton)
+    else:
+        a_complete = automaton.copy()
     # Creation of a list that will keep track of which states we need to add
     new_state = []
 
@@ -134,11 +137,9 @@ def complementary_automaton(automaton):
     else:
         inverse_automaton = automaton.copy()
     new_final = []
-    for i in range(len(inverse_automaton['states']) - 1):
-        if not inverse_automaton['states'][i] in inverse_automaton['final_states']:
-            new_final.append(i)
-    if "P" in inverse_automaton['states']:
-        new_final.append("P")
+    for state in automaton['states']:
+        if state not in automaton['final_states']:
+            new_final.append(state)
     inverse_automaton['final_states'] = new_final
     inverse_automaton['id'] = automaton['id'] + "I"
 
