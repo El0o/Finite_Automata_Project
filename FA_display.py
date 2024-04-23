@@ -13,6 +13,8 @@ def get_table(automaton):
     table.set_chars(['—', '│', '┼', '—'])
     align = ["r"] + ["c"] * len(automaton["alphabet"])
     table.set_cols_align(align)
+    ttype = ["t"] * (len(automaton["alphabet"])+1)
+    table.set_cols_dtype(ttype)
 
     head = ["  "]
     for elt in automaton["alphabet"]:
