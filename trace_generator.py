@@ -1,10 +1,7 @@
-from FA_display import *
 from FA_operations import *
 from FA_checks import *
 from FA_files_management import *
 from FA_lst import automata
-
-#automata = import_all_automata()
 
 
 for i in range(44):
@@ -16,7 +13,3 @@ for i in range(44):
     if not is_complete(auto):
         export_automaton(completion(auto))
     export_automaton(complementary_automaton(auto))
-
-
-
-
