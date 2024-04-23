@@ -1,0 +1,10 @@
+ID: 31DC
+Alphabet: a, b
+States: 0, P
+Initial States: 0
+Final States: 
+Transitions:
+0 : b : P
+0 : a : P
+P : a : P
+P : b : P

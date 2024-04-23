@@ -1,0 +1,10 @@
+ID: 36I
+Alphabet: a, b
+States: 0.2, P
+Initial States: 0.2
+Final States: 0
+Transitions:
+0 : b : P
+0 : a : P
+P : a : P
+P : b : P

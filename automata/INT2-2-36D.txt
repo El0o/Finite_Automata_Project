@@ -1,0 +1,6 @@
+ID: 36D
+Alphabet: a, b
+States: 0.2
+Initial States: 0.2
+Final States: 0.2
+Transitions:

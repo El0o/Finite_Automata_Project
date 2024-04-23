@@ -1,0 +1,7 @@
+ID: 2I
+Alphabet: a
+States: 0
+Initial States: 0
+Final States: 
+Transitions:
+0 : a : 0

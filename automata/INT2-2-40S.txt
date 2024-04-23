@@ -1,0 +1,11 @@
+ID: 40S
+Alphabet: a, b
+States: i, 0, 1, 2
+Initial States: i
+Final States: 2, 0
+Transitions:
+i : b : 1
+i : b : 2
+i : a : 0
+i : a : 2
+2 : a : 0

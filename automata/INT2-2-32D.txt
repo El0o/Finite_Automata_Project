@@ -1,0 +1,6 @@
+ID: 32D
+Alphabet: a, b, c
+States: 0
+Initial States: 0
+Final States: 
+Transitions:

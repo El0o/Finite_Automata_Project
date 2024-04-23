@@ -1,0 +1,6 @@
+ID: 17D
+Alphabet: a, b, c, d
+States: 1.2.3.4
+Initial States: 1.2.3.4
+Final States: 
+Transitions:

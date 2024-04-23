@@ -1,0 +1,9 @@
+ID: 4C
+Alphabet: a
+States: 0, 1, P
+Initial States: 0
+Final States: 
+Transitions:
+0 : a : 1
+1 : a : P
+P : a : P

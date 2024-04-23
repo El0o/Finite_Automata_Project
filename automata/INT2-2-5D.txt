@@ -1,0 +1,6 @@
+ID: 5D
+Alphabet: a, b
+States: 1.3
+Initial States: 1.3
+Final States: 
+Transitions:

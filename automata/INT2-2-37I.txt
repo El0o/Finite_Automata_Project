@@ -1,0 +1,18 @@
+ID: 37I
+Alphabet: a, b
+States: 0, 1, 2, 3, 4, P
+Initial States: 0
+Final States: P
+Transitions:
+0 : a : 1
+0 : b : 3
+1 : a : 2
+1 : b : 4
+2 : b : 0
+3 : b : 0
+3 : a : 1
+4 : a : 1
+2 : a : P
+4 : b : P
+P : a : P
+P : b : P

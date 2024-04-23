@@ -81,7 +81,8 @@ def completion(automaton):
     Returns the complete version of the automaton
     """
     if not is_deterministic(automaton):
-        a_complete = determinization(automaton)
+        auto = automaton;
+        a_complete = determinization(auto)
     else:
         a_complete = automaton.copy()
     # Creation of a list that will keep track of which states we need to add

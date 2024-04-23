@@ -1,0 +1,8 @@
+ID: 6S
+Alphabet: a, b
+States: i, 0, 1, 2, 3
+Initial States: i
+Final States: 2, 0
+Transitions:
+i : a : 2
+i : b : 0

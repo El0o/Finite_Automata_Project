@@ -1,0 +1,10 @@
+ID: 6DC
+Alphabet: a, b
+States: 1.3, P
+Initial States: 1.3
+Final States: 
+Transitions:
+0 : b : P
+0 : a : P
+P : a : P
+P : b : P

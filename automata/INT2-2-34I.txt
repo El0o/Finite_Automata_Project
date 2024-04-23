@@ -1,0 +1,10 @@
+ID: 34I
+Alphabet: a, b
+States: 0, P
+Initial States: 0
+Final States: 0, 1, 2, 3, 4, 5
+Transitions:
+0 : b : P
+0 : a : P
+P : a : P
+P : b : P

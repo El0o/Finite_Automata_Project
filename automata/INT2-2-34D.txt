@@ -1,0 +1,6 @@
+ID: 34D
+Alphabet: a, b
+States: 0
+Initial States: 0
+Final States: 
+Transitions:

@@ -1,0 +1,6 @@
+ID: 40D
+Alphabet: a, b
+States: 0.1
+Initial States: 0.1
+Final States: 0.1
+Transitions:

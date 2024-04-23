@@ -1,0 +1,14 @@
+ID: 27I
+Alphabet: a, b
+States: 0, 1, 2, P
+Initial States: 1
+Final States: 1, 2, P
+Transitions:
+1 : a : 2
+1 : b : 2
+2 : b : 0
+0 : a : 0
+0 : b : 0
+2 : a : P
+P : a : P
+P : b : P

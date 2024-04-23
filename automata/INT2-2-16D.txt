@@ -1,0 +1,14 @@
+ID: 16D
+Alphabet: a, b, c, d
+States: 1, 1.2, 2.3, 3.4, 4.0
+Initial States: 1
+Final States: 4.0
+Transitions:
+1 : a : 1.2
+1.2 : a : 1.2
+1.2 : b : 2.3
+2.3 : b : 2.3
+2.3 : c : 3.4
+3.4 : c : 3.4
+3.4 : d : 4.0
+4.0 : d : 4.0

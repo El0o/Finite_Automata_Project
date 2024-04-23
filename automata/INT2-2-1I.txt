@@ -1,0 +1,8 @@
+ID: 1I
+Alphabet: a
+States: 0, P
+Initial States: 0
+Final States: P
+Transitions:
+0 : a : P
+P : a : P

@@ -1,0 +1,11 @@
+ID: 39S
+Alphabet: a, b
+States: i, 0, 1, 2, 3
+Initial States: i
+Final States: 1
+Transitions:
+i : a : 1
+i : b : 2
+2 : a : 0
+2 : b : 1
+i : a : 2

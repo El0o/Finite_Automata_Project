@@ -1,0 +1,16 @@
+ID: 26I
+Alphabet: a, b
+States: 0, 1, 2, 3, P
+Initial States: 1
+Final States: 0, 1, 2, P
+Transitions:
+1 : a : 2
+1 : b : 2
+2 : a : 0
+2 : b : 3
+3 : a : 3
+3 : b : 3
+0 : b : P
+0 : a : P
+P : a : P
+P : b : P

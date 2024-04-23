@@ -1,0 +1,12 @@
+ID: 5S
+Alphabet: a, b
+States: i, 1, 2, 3, 4, 0
+Initial States: i
+Final States: 2, 4
+Transitions:
+i : a : 2
+i : b : 0
+i : a : 0
+i : b : 4
+0 : a : 0
+0 : b : 0
