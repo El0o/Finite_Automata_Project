@@ -81,7 +81,7 @@ def completion(automaton):
     Returns the complete version of the automaton
     """
     if not is_deterministic(automaton):
-        auto = automaton;
+        auto = automaton
         a_complete = determinization(auto)
     else:
         a_complete = automaton.copy()
@@ -134,7 +134,8 @@ def completion(automaton):
 
 def complementary_automaton(automaton):
     if not is_complete(automaton):
-        inverse_automaton = completion(automaton)
+        auto = automaton
+        inverse_automaton = completion(auto)
     else:
         inverse_automaton = automaton.copy()
     new_final = []

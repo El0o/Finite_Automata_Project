@@ -75,27 +75,33 @@ def main():
                     case "C":  # Completion
                         if is_complete(auto):
                             print("This automaton is already complete.\n")
-                        elif not is_deterministic(auto):
-                            while True:
-                                entry = input(f"This automaton is not deterministic. Do you want to determinize and complete it ? (y/n)\n>> ").upper()
-                                if entry == "Y" or entry == "YES":
-                                    print("Determinazing & completing...\n")
-                                    previous_auto.append(auto)
-                                    auto = completion(determinization(auto))
-                                    print("Determinazation & completion done.\n")
-                                    break
-                                elif entry == "N" or entry == "NO":
-                                    break
-                                else:
-                                    print("Statement not recognized. Please type [Y] or [N].")
                         else:
-                            print("Completing...\n")
+                            str1 = "Completing"
+                            str2 = "Completion"
+                            if not is_deterministic(auto):
+                                str1 = "Determinizing and completing"
+                                str2 = "Determinization and completion"
+                            print(f"{str1}...\n")
                             previous_auto.append(auto)
                             auto = completion(auto)
-                            print("Completion done.\n")
+                            print(f"{str2} done.\n")
 
                     case "M":  # Minimization
-                        print("Minimization stuff")  # Fonctions en cours de développement
+                        if auto['id'][-1] == "M":
+                            print("This automaton has already been minimized.\n")
+                        else:
+                            str1 = "Minimizing"
+                            str2 = "Minimization"
+                            if not is_deterministic(auto):
+                                str1 = "Determinizing, completing and minimizing"
+                                str2 = "Determinization, completion and minimization"
+                            elif not is_complete(auto):
+                                str1 = "Completing and minimizing"
+                                str2 = "Completion and minimization"
+                            print(f"{str1}...\n")
+                            # previous_auto.append(auto)
+                            # auto = minimization(auto)
+                            print(f"{str2} done.\n")
 
                     case "I":  # Building of the complementary automaton
                         print("Building...\n")
