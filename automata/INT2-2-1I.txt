@@ -2,7 +2,7 @@ ID: 1I
 Alphabet: a
 States: 0, P
 Initial States: 0
-Final States: P
+Final States: 
 Transitions:
 0 : a : P
 P : a : P

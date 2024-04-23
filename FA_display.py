@@ -37,9 +37,9 @@ def get_table(automaton):
             cell = ""
             for tr in automaton["transitions"]:
                 if (tr[0] == state) and (tr[1] == a):
-                    cell += f"{tr[2]},"
+                    cell += f"{tr[2]}, "
             if cell != "":
-                cell = cell[:-1]
+                cell = cell[:-2]
             new_row.append(cell)
         table.add_row(new_row)
 

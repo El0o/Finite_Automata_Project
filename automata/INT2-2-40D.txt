@@ -1,6 +1,14 @@
 ID: 40D
 Alphabet: a, b
-States: 0.1
+States: 0.1, 0.2, 1.2, 0, 2
 Initial States: 0.1
-Final States: 0.1
+Final States: 0.2, 1.2, 2, 0.1, 0.2, 0
 Transitions:
+0.1 : a : 0.2
+0.1 : b : 1.2
+0.2 : a : 0
+0.2 : b : 1.2
+1.2 : a : 0.2
+1.2 : b : 2
+0 : b : 1.2
+2 : a : 0

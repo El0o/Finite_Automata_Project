@@ -2,7 +2,7 @@ ID: 42I
 Alphabet: a, b, c
 States: 0, 1, 2, 3, 4, P
 Initial States: 1
-Final States: 0, 2, 3, 4, P
+Final States: 0, 2, 3, 4
 Transitions:
 3 : a : 3
 3 : b : 3

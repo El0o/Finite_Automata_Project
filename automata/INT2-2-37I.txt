@@ -2,7 +2,7 @@ ID: 37I
 Alphabet: a, b
 States: 0, 1, 2, 3, 4, P
 Initial States: 0
-Final States: P
+Final States: 
 Transitions:
 0 : a : 1
 0 : b : 3

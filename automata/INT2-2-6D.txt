@@ -1,6 +1,8 @@
 ID: 6D
 Alphabet: a, b
-States: 1.3
+States: 1.3, 2, 0
 Initial States: 1.3
-Final States: 
+Final States: 2, 0
 Transitions:
+1.3 : a : 2
+1.3 : b : 0

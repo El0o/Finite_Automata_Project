@@ -2,7 +2,7 @@ ID: 9I
 Alphabet: a, b
 States: 0, 1, 2, 3, 4, 5, P
 Initial States: 1
-Final States: 2, 3, 4, 5, P
+Final States: 2, 3, 4, 5
 Transitions:
 1 : a : 2
 2 : a : 3

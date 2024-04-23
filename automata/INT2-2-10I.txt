@@ -2,7 +2,7 @@ ID: 10I
 Alphabet: a, b
 States: 0, 1, 2, 3, 4, P
 Initial States: 0
-Final States: 1, 2, 3, 4, P
+Final States: 1, 2, 3, 4
 Transitions:
 0 : a : 1
 1 : a : 2

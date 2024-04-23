@@ -1,6 +1,14 @@
 ID: 5D
 Alphabet: a, b
-States: 1.3
+States: 1.3, 2.0, 0.4, 0
 Initial States: 1.3
-Final States: 
+Final States: 2.0, 0.4
 Transitions:
+1.3 : a : 2.0
+1.3 : b : 0.4
+2.0 : a : 0
+2.0 : b : 0
+0.4 : a : 0
+0.4 : b : 0
+0 : a : 0
+0 : b : 0

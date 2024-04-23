@@ -40,7 +40,7 @@ def main():
             print("Automaton not found :/")
         else:
             # Automaton menu
-            auto = automaton.copy()
+            auto = deepcopy(automaton)
             previous_auto = []
             not_done_yet = True
             while not_done_yet:

@@ -2,7 +2,7 @@ ID: 21I
 Alphabet: a, b, c, d
 States: 0, 1, 2, 3, P
 Initial States: 1
-Final States: 0, 2, 3, P
+Final States: 0, 2, 3
 Transitions:
 1 : a : 2
 2 : b : 3

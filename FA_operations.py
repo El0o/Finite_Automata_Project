@@ -1,12 +1,13 @@
 # Functions that operate on an automaton and returns another one on which the operation is done
 from FA_checks import *
+from copy import deepcopy
 
 
 def standardization(automaton):
     """
     Returns the standard version of the automaton
     """
-    a_standard = automaton.copy()
+    a_standard = deepcopy(automaton)
     nb_tr = len(a_standard['transitions'])
     for k in range(len(a_standard['initial_states'])):
         for i in range(nb_tr):
@@ -30,7 +31,7 @@ def determinization(automaton):
     """
     Returns the deterministic version of the automaton
     """
-    a_deter = automaton.copy()
+    a_deter = deepcopy(automaton)
     new_states = []
     new_transitions = []
     new_finals = []
@@ -81,10 +82,10 @@ def completion(automaton):
     Returns the complete version of the automaton
     """
     if not is_deterministic(automaton):
-        auto = automaton
-        a_complete = determinization(auto)
+        autom = automaton
+        a_complete = determinization(autom)
     else:
-        a_complete = automaton.copy()
+        a_complete = deepcopy(automaton)
     # Creation of a list that will keep track of which states we need to add
     new_state = []
 
@@ -134,10 +135,10 @@ def completion(automaton):
 
 def complementary_automaton(automaton):
     if not is_complete(automaton):
-        auto = automaton
-        inverse_automaton = completion(auto)
+        autom = automaton
+        inverse_automaton = completion(autom)
     else:
-        inverse_automaton = automaton.copy()
+        inverse_automaton = deepcopy(automaton)
     new_final = []
     for state in automaton['states']:
         if state not in automaton['final_states']:
@@ -149,7 +150,7 @@ def complementary_automaton(automaton):
 
 
 def are_distinguishable(elt1, elt2, P_previous, automaton):
-    alphabet = automaton["alphabet"].copy()
+    alphabet = deepcopy(automaton["alphabet"])
     for a in alphabet:
         t1 = []
         t2 = []
@@ -185,11 +186,11 @@ def minimization(automaton):
     Return the minimal version of the automaton
     """
     if is_complete(automaton):
-        a_mini = automaton.copy()
+        a_mini = deepcopy(automaton)
     else:
-        a_mini = completion(automaton).copy()
+        a_mini = deepcopy(completion(automaton))
 
-    P_next = [automaton["final_states"].copy(), []]
+    P_next = [deepcopy(automaton["final_states"]), []]
     for s in automaton["states"]:
         if s not in automaton["final_states"]:
             P_next[1].append(s)

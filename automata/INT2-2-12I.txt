@@ -2,7 +2,7 @@ ID: 12I
 Alphabet: a, b, c, d
 States: 0, 1, P
 Initial States: 1
-Final States: 0, P
+Final States: 0
 Transitions:
 1 : a : 1
 1 : c : 0

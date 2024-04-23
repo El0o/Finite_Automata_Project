@@ -2,7 +2,7 @@ ID: 26I
 Alphabet: a, b
 States: 0, 1, 2, 3, P
 Initial States: 1
-Final States: 0, 1, 2, P
+Final States: 0, 1, 2
 Transitions:
 1 : a : 2
 1 : b : 2

@@ -2,7 +2,7 @@ ID: 18I
 Alphabet: a, b, c, d
 States: 0, 1, 2, 3, 4, P
 Initial States: 1
-Final States: 1, 2, 3, 4, P
+Final States: 1, 2, 3, 4
 Transitions:
 1 : a : 2
 1 : b : 3

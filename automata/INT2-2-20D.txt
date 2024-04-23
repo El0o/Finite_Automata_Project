@@ -1,6 +1,13 @@
 ID: 20D
 Alphabet: a, b, c, d
-States: 1.6.7.8.0
+States: 1.6.7.8.0, 2, 3, 4, 5
 Initial States: 1.6.7.8.0
-Final States: 
+Final States: 5
 Transitions:
+1.6.7.8.0 : a : 2
+1.6.7.8.0 : b : 3
+1.6.7.8.0 : c : 4
+1.6.7.8.0 : d : 5
+2 : b : 3
+3 : c : 4
+4 : d : 5
