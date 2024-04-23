@@ -53,7 +53,8 @@ def determinization(automaton):
             if temp:
                 start = delimiter.join(current_state)
                 target = delimiter.join(temp)
-                new_transitions.append("{}{}{}".format(start, a, target))
+
+                new_transitions.append([start, a, target])
         nb_state += 1
 
     for s in to_treat_states:
@@ -66,7 +67,7 @@ def determinization(automaton):
                 final = delimiter.join(s)
                 new_finals.append(final)
 
-    a_deter["initial_states"] = delimiter.join(to_treat_states[0])
+    a_deter["initial_states"] = [delimiter.join(to_treat_states[0])]
     a_deter["states"] = new_states
     a_deter["final_states"] = new_finals
     a_deter["transitions"] = new_transitions
