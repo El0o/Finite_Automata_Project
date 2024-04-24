@@ -154,19 +154,21 @@ def complementary_automaton(automaton):
 def are_distinguishable(elt1, elt2, P_previous, automaton):
     alphabet = deepcopy(automaton["alphabet"])
     for a in alphabet:
-        t1 = []
-        t2 = []
         i = 0
-        while (t1 == [] or t2 == []) and (i < len(automaton["transitions"])):
+        t1 = ''
+        t2 = ''
+        while (t1 == '' or t2 == '') and (i < len(automaton["transitions"])):
             if automaton["transitions"][i][1] == a:
                 if automaton["transitions"][i][0] == elt1:
-                    t1 = [automaton["transitions"][i][2]]
+                    t1 = automaton["transitions"][i][2]
                     i += 1
                 if automaton["transitions"][i][0] == elt2:
-                    t2 = [automaton["transitions"][i][2]]
+                    t2 = automaton["transitions"][i][2]
                     i += 1
                 else:
                     i += 1
+            else:
+                i += 1
 
         for p in P_previous:
             if t1 in p:
@@ -176,7 +178,6 @@ def are_distinguishable(elt1, elt2, P_previous, automaton):
             if t2 in p:
                 t2 = P_previous.index(p)
                 break
-
         if t1 != t2:
             return 1
 
@@ -192,21 +193,19 @@ def minimization(automaton):
     else:
         a_mini = deepcopy(completion(automaton))
 
-    P_next = [deepcopy(automaton["final_states"]), []]
-    for s in automaton["states"]:
-        if s not in automaton["final_states"]:
+    P_next = [deepcopy(a_mini["final_states"]), []]
+    for s in a_mini["states"]:
+        if s not in a_mini["final_states"]:
             P_next[1].append(s)
     P_previous = []
-
     while P_previous != P_next:
         P_previous = P_next
         P_next = []
 
         for partition in P_previous:
             if len(partition) > 1:
-                for elt1 in partition:
+                for elt1 in partition[:1]:
                     for elt2 in partition[partition.index(elt1) + 1:]:
-
                         if are_distinguishable(elt1, elt2, P_previous, a_mini):
                             is_in1 = 0
                             is_in2 = 0
@@ -218,9 +217,9 @@ def minimization(automaton):
                                 if is_in1 and is_in2:
                                     break
                             if not is_in1:
-                                P_next.append(elt1)
+                                P_next.append([elt1])
                             if not is_in2:
-                                P_next.append(elt2)
+                                P_next.append([elt2])
 
                         else:
                             is_in1 = 0
@@ -245,13 +244,15 @@ def minimization(automaton):
     a_mini["id"] = a_mini["id"][0] + "MCD"
     a_mini["states"] = []
     for i in range(len(P_next)):
-        if a_mini["initial_states"] in P_next[i]:
-            a_mini["initial_states"] = "{}".format(i)
+        if a_mini["initial_states"][0] in P_next[i]:
+            a_mini["initial_states"] = ["{}".format(i)]
+            break
+    for i in range(len(P_next)):
         a_mini["states"].append("{}".format(i))
     new_finals = []
     for f in a_mini["final_states"]:
         for i in range(len(P_next)):
-            if f in P_next[i]:
+            if f in P_next[i] and str(i) not in new_finals:
                 new_finals.append("{}".format(i))
     a_mini["final_states"] = new_finals
 
@@ -260,7 +261,9 @@ def minimization(automaton):
     for i in range(len(P_next)):
         for t in a_mini["transitions"]:
             if P_next[i][0] == t[0]:
-                new_transitions[nb].append("{}", "{}".format(i, t[1]))
+                new_transitions.append([])
+                new_transitions[nb].append("{}".format(i))
+                new_transitions[nb].append("{}".format(t[1]))
                 for j in range(len(P_next)):
                     if t[2] in P_next[j]:
                         new_transitions[nb].append("{}".format(j))
