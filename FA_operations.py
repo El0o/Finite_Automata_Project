@@ -185,8 +185,8 @@ def are_distinguishable(elt1, elt2, P_previous, automaton):
 
 
 def roman_nb(integer):
-    roman = ['0', 'I', 'II', 'III', 'IV', 'V', 'VI', 'VII', 'VIII', 'IX', 'X']
-    if integer > 10:
+    roman = ['0', 'I', 'II', 'III', 'IV', 'V', 'VI', 'VII', 'VIII', 'IX', 'X', 'XI', 'XII', 'XIII', 'XIV', 'XV']
+    if integer > 15:
         return "blep"
     return roman[integer]
 
@@ -256,15 +256,15 @@ def minimization(automaton):
     a_mini["states"] = []
     for i in range(len(P_next)):
         if a_mini["initial_states"][0] in P_next[i]:
-            a_mini["initial_states"] = ["{}".format(i)]
+            a_mini["initial_states"] = ["{}".format(roman_nb(i))]
             break
     for i in range(len(P_next)):
-        a_mini["states"].append("{}".format(i))
+        a_mini["states"].append("{}".format(roman_nb(i)))
     new_finals = []
     for f in a_mini["final_states"]:
         for i in range(len(P_next)):
             if f in P_next[i] and str(i) not in new_finals:
-                new_finals.append("{}".format(i))
+                new_finals.append("{}".format(roman_nb(i)))
     a_mini["final_states"] = new_finals
 
     new_transitions = []
@@ -273,11 +273,11 @@ def minimization(automaton):
         for t in a_mini["transitions"]:
             if P_next[i][0] == t[0]:
                 new_transitions.append([])
-                new_transitions[nb].append("{}".format(i))
+                new_transitions[nb].append("{}".format(roman_nb(i)))
                 new_transitions[nb].append("{}".format(t[1]))
                 for j in range(len(P_next)):
                     if t[2] in P_next[j]:
-                        new_transitions[nb].append("{}".format(j))
+                        new_transitions[nb].append("{}".format(format(j)))
                         break
                 nb += 1
     a_mini["transitions"] = new_transitions
