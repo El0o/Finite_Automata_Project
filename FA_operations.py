@@ -257,7 +257,7 @@ def minimization(automaton):
             else:
                 P_next.append(partition)
 
-    a_mini["id"] = a_mini["id"] + "M"
+    a_mini["id"] = automaton["id"] + "M"
     a_mini["states"] = []
     for i in range(len(P_next)):
         if a_mini["initial_states"][0] in P_next[i]:
@@ -287,8 +287,8 @@ def minimization(automaton):
                 nb += 1
     a_mini["transitions"] = new_transitions
 
-    S_equivalence = "The new states have the following correspondence : \n"
+    S_equivalence = "The new states have the following correspondence: \n"
     for i in range(len(P_next)):
-        S_equivalence = S_equivalence + ("- {} : ".format(roman_nb(i))) + ("{}".format(P_next[i])) + "\n"
+        S_equivalence = S_equivalence + ("- {} : ".format(roman_nb(i))) + ("{}".format(', '.join(P_next[i]))) + "\n"
 
     return [a_mini, S_equivalence]
