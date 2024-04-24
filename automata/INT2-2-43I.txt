@@ -1,6 +1,6 @@
 ID: 43I
 Alphabet: a, b
-States: 0, 0.1, 0.2, 0.1.2, P
+States: 0, 0.1, 0.2, 0.1.2
 Initial States: 0
 Final States: 0, 1
 Transitions:
@@ -12,5 +12,3 @@ Transitions:
 0.2 : b : 0.1.2
 0.1.2 : a : 0.2
 0.1.2 : b : 0.1.2
-P : a : P
-P : b : P

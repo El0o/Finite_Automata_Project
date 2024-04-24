@@ -1,9 +1,8 @@
 ID: 7I
 Alphabet: a
-States: 1, 0.1, P
+States: 1, 0.1
 Initial States: 1
 Final States: 1
 Transitions:
 1 : a : 0.1
 0.1 : a : 0.1
-P : a : P
