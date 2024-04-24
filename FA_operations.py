@@ -285,4 +285,8 @@ def minimization(automaton):
                 nb += 1
     a_mini["transitions"] = new_transitions
 
-    return a_mini
+    S_equivalence = "The new states have the following correspondence : \n"
+    for i in range(len(P_next)):
+        S_equivalence = S_equivalence + ("- {} : ".format(roman_nb(i))) + ("{}".format(P_next[i])) + "\n"
+
+    return [a_mini, S_equivalence]
