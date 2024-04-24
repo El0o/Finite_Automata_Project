@@ -226,15 +226,19 @@ def minimization(automaton):
                             is_in2 = 0
                             for p in P_next:
                                 if elt1 in p:
-                                    is_in1 = P_next.index(p)
+                                    is_in1 = 1
+                                    index1 = P_next.index(p)
                                     break
                                 elif elt2 in p:
-                                    is_in2 = P_next.index(p)
+                                    is_in2 = 1
+                                    index2 = P_next.index(p)
                                     break
-                            if is_in1 and elt2 not in P_next[is_in1]:
-                                P_next[is_in1].append(elt2)
-                            elif is_in2 and elt1 not in P_next[is_in2]:
-                                P_next[is_in2].append(elt1)
+                            if is_in1:
+                                if elt2 not in P_next[index1]:
+                                    P_next[index1].append(elt2)
+                            elif is_in2:
+                                if elt1 not in P_next[index2]:
+                                    P_next[index2].append(elt1)
                             else:
                                 P_next.append([elt1, elt2])
 
