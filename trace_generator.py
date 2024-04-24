@@ -13,3 +13,4 @@ for i in range(44):
     if not is_complete(auto):
         export_automaton(completion(auto))
     export_automaton(complementary_automaton(auto))
+    export_automaton(minimization(auto)[0])

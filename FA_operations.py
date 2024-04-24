@@ -255,7 +255,7 @@ def minimization(automaton):
             else:
                 P_next.append(partition)
 
-    a_mini["id"] = a_mini["id"] + "M"
+    a_mini["id"] = automaton["id"] + "M"
     a_mini["states"] = []
     for i in range(len(P_next)):
         if a_mini["initial_states"][0] in P_next[i]:
