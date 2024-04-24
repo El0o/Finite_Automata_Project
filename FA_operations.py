@@ -316,4 +316,4 @@ automaton = {
         ]
     }
 
-minimization(automaton)
+print(minimization(automaton))
