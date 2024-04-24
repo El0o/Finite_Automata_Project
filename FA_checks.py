@@ -13,7 +13,7 @@ def is_standard(automaton, explicit_mode=False):
             return output
         return 0
     for elt in automaton["transitions"]:
-        if elt[2:] in automaton["initial_states"]:
+        if elt[2] in automaton["initial_states"]:
             if explicit_mode:
                 output = [False, "Transitions towards the initial state were found."]
                 return output

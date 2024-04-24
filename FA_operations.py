@@ -84,6 +84,8 @@ def completion(automaton):
     if not is_deterministic(automaton):
         autom = automaton
         a_complete = determinization(autom)
+        if is_complete(a_complete):
+            return a_complete
     else:
         a_complete = deepcopy(automaton)
     # Creation of a list that will keep track of which states we need to add
