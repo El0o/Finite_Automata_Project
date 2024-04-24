@@ -185,6 +185,9 @@ def are_distinguishable(elt1, elt2, P_previous, automaton):
 
 
 def roman_nb(integer):
+    """
+    Return the roman number version of the integer
+    """
     roman = ['0', 'I', 'II', 'III', 'IV', 'V', 'VI', 'VII', 'VIII', 'IX', 'X', 'XI', 'XII', 'XIII', 'XIV', 'XV']
     if integer > 15:
         return "blep"
@@ -277,7 +280,7 @@ def minimization(automaton):
                 new_transitions[nb].append("{}".format(t[1]))
                 for j in range(len(P_next)):
                     if t[2] in P_next[j]:
-                        new_transitions[nb].append("{}".format(format(j)))
+                        new_transitions[nb].append("{}".format(roman_nb(j)))
                         break
                 nb += 1
     a_mini["transitions"] = new_transitions
