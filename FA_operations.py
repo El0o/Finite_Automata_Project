@@ -184,6 +184,13 @@ def are_distinguishable(elt1, elt2, P_previous, automaton):
     return 0
 
 
+def roman_nb(integer):
+    roman = ['0', 'I', 'II', 'III', 'IV', 'V', 'VI', 'VII', 'VIII', 'IX', 'X']
+    if integer > 10:
+        return "blep"
+    return roman[integer]
+
+
 def minimization(automaton):
     """
     Return the minimal version of the automaton
@@ -245,7 +252,7 @@ def minimization(automaton):
             else:
                 P_next.append(partition)
 
-    a_mini["id"] = a_mini["id"][0] + "MCD"
+    a_mini["id"] = a_mini["id"] + "M"
     a_mini["states"] = []
     for i in range(len(P_next)):
         if a_mini["initial_states"][0] in P_next[i]:

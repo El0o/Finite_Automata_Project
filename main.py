@@ -99,8 +99,8 @@ def main():
                                 str1 = "Completing and minimizing"
                                 str2 = "Completion and minimization"
                             print(f"{str1}...\n")
-                            # previous_auto.append(auto)
-                            # auto = minimization(auto)
+                            previous_auto.append(auto)
+                            auto = minimization(auto)
                             print(f"{str2} done.\n")
 
                     case "I":  # Building of the complementary automaton
