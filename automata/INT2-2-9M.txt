@@ -1,0 +1,18 @@
+ID: 9M
+Alphabet: a, b
+States: 0, I, II, III, IV, V
+Initial States: 0
+Final States: 0
+Transitions:
+0 : a : I
+0 : b : II
+I : a : III
+I : b : III
+II : a : II
+II : b : II
+III : a : IV
+III : b : II
+IV : a : V
+IV : b : V
+V : a : 0
+V : b : II

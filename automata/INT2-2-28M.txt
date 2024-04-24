@@ -1,0 +1,13 @@
+ID: 28M
+Alphabet: a
+States: 0, I, II, III, IV, V, VI
+Initial States: IV
+Final States: 0, II, I, III, II
+Transitions:
+0 : a : III
+I : a : 0
+II : a : V
+III : a : VI
+IV : a : V
+V : a : I
+VI : a : II

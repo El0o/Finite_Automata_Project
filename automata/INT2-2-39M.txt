@@ -1,0 +1,22 @@
+ID: 39M
+Alphabet: a, b
+States: 0, I, II, III, IV, V, VI, VII
+Initial States: 0
+Final States: 0, IV, I, V, II, III
+Transitions:
+0 : a : IV
+0 : b : VI
+I : a : II
+I : b : VI
+II : a : II
+II : b : VI
+III : a : II
+III : b : VI
+IV : a : I
+IV : b : V
+V : a : III
+V : b : IV
+VI : a : VII
+VI : b : II
+VII : a : II
+VII : b : VI

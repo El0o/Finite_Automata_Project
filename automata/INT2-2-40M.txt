@@ -1,0 +1,18 @@
+ID: 40M
+Alphabet: a, b
+States: 0, I, II, III, IV, V, VI
+Initial States: II
+Final States: 0, IV, I, III, II, IV, V
+Transitions:
+0 : a : V
+0 : b : I
+I : a : 0
+I : b : III
+II : a : 0
+II : b : I
+III : a : V
+IV : a : V
+IV : b : I
+V : b : I
+VI : a : VI
+VI : b : VI

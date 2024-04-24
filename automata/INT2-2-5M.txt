@@ -1,0 +1,12 @@
+ID: 5M
+Alphabet: a, b
+States: 0, I, II
+Initial States: I
+Final States: 0
+Transitions:
+0 : a : II
+0 : b : II
+I : a : 0
+I : b : 0
+II : a : II
+II : b : II

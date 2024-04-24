@@ -1,0 +1,18 @@
+ID: 12M
+Alphabet: a, b, c, d
+States: 0, I, II
+Initial States: 0
+Final States: 0
+Transitions:
+0 : a : 0
+0 : c : I
+0 : d : II
+0 : b : II
+I : b : I
+I : d : 0
+I : c : II
+I : a : II
+II : a : II
+II : b : II
+II : c : II
+II : d : II

@@ -1,0 +1,14 @@
+ID: 26M
+Alphabet: a, b
+States: 0, I, II, III
+Initial States: II
+Final States: 0
+Transitions:
+0 : a : 0
+0 : b : 0
+I : b : I
+I : a : I
+II : a : III
+II : b : III
+III : a : I
+III : b : 0

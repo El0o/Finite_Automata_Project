@@ -1,0 +1,10 @@
+ID: 12S
+Alphabet: a, b, c, d
+States: i, 0, 1
+Initial States: i
+Final States: 1
+Transitions:
+i : a : 1
+i : c : 0
+0 : b : 0
+0 : d : 1

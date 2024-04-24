@@ -1,0 +1,7 @@
+ID: 4M
+Alphabet: a
+States: 0, I
+Initial States: I
+Final States: 
+Transitions:
+I : a : I

@@ -1,0 +1,10 @@
+ID: 44M
+Alphabet: a, b
+States: 0, I
+Initial States: I
+Final States: 0
+Transitions:
+0 : a : 0
+0 : b : 0
+I : a : 0
+I : b : 0

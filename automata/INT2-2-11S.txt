@@ -1,0 +1,14 @@
+ID: 11S
+Alphabet: a, b
+States: i, 0, 1, 2, 3
+Initial States: i
+Final States: 2
+Transitions:
+i : b : 3
+i : a : 2
+1 : a : 3
+1 : b : 3
+2 : a : 1
+2 : b : 0
+3 : a : 3
+3 : b : 3

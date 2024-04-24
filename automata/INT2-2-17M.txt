@@ -1,0 +1,28 @@
+ID: 17M
+Alphabet: a, b, c, d
+States: 0, I, II, III, IV, V, VI, VII
+Initial States: II
+Final States: 0, I
+Transitions:
+0 : a : VI
+0 : b : VI
+0 : c : VI
+0 : d : I
+I : a : VI
+I : b : VI
+I : c : VI
+I : d : I
+II : a : III
+II : b : IV
+II : c : V
+II : d : 0
+III : a : III
+III : b : IV
+IV : b : IV
+IV : c : V
+V : c : V
+V : d : 0
+VII : a : VII
+VII : b : VII
+VII : c : VII
+VII : d : VII

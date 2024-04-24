@@ -1,0 +1,20 @@
+ID: 25S
+Alphabet: a, b, c, d
+States: i, 0, 1, 2, 3, 4
+Initial States: i
+Final States: 0
+Transitions:
+i : a : 2
+2 : b : 3
+3 : c : 4
+4 : d : 0
+i : b : 3
+i : c : 4
+i : d : 0
+2 : c : 4
+2 : d : 0
+3 : d : 0
+i : a : 1
+2 : b : 2
+3 : c : 3
+4 : d : 4

@@ -1,0 +1,30 @@
+ID: 23M
+Alphabet: a, b, c, d
+States: 0, I, II, III, IV, V
+Initial States: I
+Final States: 0
+Transitions:
+0 : d : 0
+0 : c : II
+0 : b : II
+0 : a : II
+I : a : III
+I : d : II
+I : c : II
+I : b : II
+II : a : II
+II : b : II
+II : c : II
+II : d : II
+III : b : IV
+III : a : III
+III : d : II
+III : c : II
+IV : c : V
+IV : b : IV
+IV : d : II
+IV : a : II
+V : d : 0
+V : c : V
+V : b : II
+V : a : II

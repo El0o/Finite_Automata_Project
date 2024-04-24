@@ -1,0 +1,24 @@
+ID: 42M
+Alphabet: a, b, c
+States: 0, I, II, III, IV, V
+Initial States: 0
+Final States: 0
+Transitions:
+0 : a : I
+0 : b : II
+0 : c : V
+I : a : III
+I : c : III
+I : b : 0
+II : a : 0
+II : b : IV
+II : c : IV
+III : a : III
+III : b : III
+III : c : III
+IV : a : IV
+IV : b : IV
+IV : c : IV
+V : a : V
+V : b : V
+V : c : V

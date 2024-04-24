@@ -1,0 +1,21 @@
+ID: 36M
+Alphabet: a, b
+States: 0, I, II, III, IV, V, VI, VII
+Initial States: V
+Final States: 0, II, VI, III, I, IV, V, II, III, IV
+Transitions:
+0 : a : VI
+0 : b : III
+I : a : VI
+I : b : IV
+II : a : I
+II : b : V
+III : a : 0
+III : b : IV
+IV : a : I
+IV : b : III
+V : a : 0
+V : b : II
+VI : b : V
+VII : a : VII
+VII : b : VII
