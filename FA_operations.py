@@ -136,6 +136,9 @@ def completion(automaton):
 
 
 def complementary_automaton(automaton):
+    """
+    Returns the automaton accepting the complementary language of the given automaton
+    """
     if not is_complete(automaton):
         autom = automaton
         inverse_automaton = completion(autom)
@@ -152,6 +155,9 @@ def complementary_automaton(automaton):
 
 
 def are_distinguishable(elt1, elt2, P_previous, automaton):
+    """
+    Returns true if the two elements are distinguishable
+    """
     alphabet = deepcopy(automaton["alphabet"])
     for a in alphabet:
         i = 0

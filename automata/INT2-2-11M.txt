@@ -1,0 +1,14 @@
+ID: 11M
+Alphabet: a, b
+States: 0, I, II, III
+Initial States: I
+Final States: 0
+Transitions:
+0 : a : II
+0 : b : I
+I : b : III
+I : a : 0
+II : a : III
+II : b : III
+III : a : III
+III : b : III

@@ -1,0 +1,26 @@
+ID: 15M
+Alphabet: a, b, c, d
+States: 0, I, II, III, IV
+Initial States: II
+Final States: 0
+Transitions:
+0 : d : 0
+0 : a : 0
+0 : b : 0
+0 : c : 0
+I : a : I
+I : d : I
+I : c : I
+I : b : I
+II : a : II
+II : b : III
+II : c : IV
+II : d : 0
+III : a : I
+III : b : III
+III : c : IV
+III : d : 0
+IV : c : IV
+IV : d : 0
+IV : a : I
+IV : b : I

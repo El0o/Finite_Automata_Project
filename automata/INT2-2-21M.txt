@@ -1,0 +1,26 @@
+ID: 21M
+Alphabet: a, b, c, d
+States: 0, I, II, III, IV
+Initial States: 0
+Final States: 0
+Transitions:
+0 : a : II
+0 : d : IV
+0 : c : IV
+0 : b : IV
+I : d : 0
+I : c : IV
+I : b : IV
+I : a : IV
+II : b : III
+II : d : IV
+II : c : IV
+II : a : IV
+III : c : I
+III : d : IV
+III : b : IV
+III : a : IV
+IV : a : IV
+IV : b : IV
+IV : c : IV
+IV : d : IV

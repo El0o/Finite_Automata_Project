@@ -1,0 +1,23 @@
+ID: 15S
+Alphabet: a, b, c, d
+States: i, 0, 1, 2, 3, 4
+Initial States: i
+Final States: 4
+Transitions:
+0 : a : 0
+i : a : 1
+i : b : 2
+i : c : 3
+i : d : 4
+2 : a : 0
+2 : b : 2
+2 : c : 3
+2 : d : 4
+3 : c : 3
+3 : d : 4
+3 : a : 0
+3 : b : 0
+4 : d : 4
+4 : a : 4
+4 : b : 4
+4 : c : 4

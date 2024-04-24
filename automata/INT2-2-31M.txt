@@ -1,0 +1,8 @@
+ID: 31M
+Alphabet: a, b
+States: 0, I
+Initial States: I
+Final States: 
+Transitions:
+I : b : I
+I : a : I

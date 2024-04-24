@@ -1,0 +1,9 @@
+ID: 3M
+Alphabet: a
+States: 0, I, II
+Initial States: I
+Final States: 0
+Transitions:
+0 : a : II
+I : a : 0
+II : a : II

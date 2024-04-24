@@ -1,0 +1,8 @@
+ID: 38M
+Alphabet: a, b
+States: 0
+Initial States: 0
+Final States: 0
+Transitions:
+0 : a : 0
+0 : b : 0

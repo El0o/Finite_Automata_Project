@@ -1,0 +1,9 @@
+ID: 33M
+Alphabet: a, b, c
+States: 0, I
+Initial States: I
+Final States: 
+Transitions:
+I : c : I
+I : b : I
+I : a : I

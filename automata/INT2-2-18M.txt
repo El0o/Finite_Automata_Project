@@ -1,0 +1,30 @@
+ID: 18M
+Alphabet: a, b, c, d
+States: 0, I, II, III, IV, V
+Initial States: I
+Final States: 0
+Transitions:
+0 : d : V
+0 : c : V
+0 : b : V
+0 : a : V
+I : a : IV
+I : b : II
+I : c : III
+I : d : 0
+II : b : II
+II : c : III
+II : d : 0
+II : a : V
+III : c : III
+III : d : 0
+III : b : V
+III : a : V
+IV : a : IV
+IV : b : II
+IV : c : III
+IV : d : 0
+V : a : V
+V : b : V
+V : c : V
+V : d : V

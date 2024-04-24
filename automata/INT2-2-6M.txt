@@ -1,0 +1,12 @@
+ID: 6M
+Alphabet: a, b
+States: 0, I, II, III
+Initial States: II
+Final States: 0, I
+Transitions:
+0 : b : III
+0 : a : III
+II : a : 0
+II : b : I
+III : a : III
+III : b : III

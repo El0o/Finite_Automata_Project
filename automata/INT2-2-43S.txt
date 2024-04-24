@@ -1,0 +1,12 @@
+ID: 43S
+Alphabet: a, b
+States: i, 0, 1, 2
+Initial States: i
+Final States: 2
+Transitions:
+i : a : 0
+i : b : 0
+i : b : 1
+2 : a : 2
+2 : b : 2
+1 : a : 2

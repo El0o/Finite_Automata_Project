@@ -1,0 +1,14 @@
+ID: 37S
+Alphabet: a, b
+States: i, 0, 1, 2, 3, 4
+Initial States: i
+Final States: 0, 1, 2, 3, 4
+Transitions:
+i : a : 1
+i : b : 3
+1 : a : 2
+1 : b : 4
+2 : b : 0
+3 : b : 0
+3 : a : 1
+4 : a : 1

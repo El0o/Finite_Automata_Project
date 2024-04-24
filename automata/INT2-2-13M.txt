@@ -1,0 +1,9 @@
+ID: 13M
+Alphabet: a
+States: 0, I, II
+Initial States: I
+Final States: 0
+Transitions:
+0 : a : 0
+I : a : II
+II : a : 0

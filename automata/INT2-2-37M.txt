@@ -1,0 +1,16 @@
+ID: 37M
+Alphabet: a, b
+States: 0, I, II, III, IV
+Initial States: 0
+Final States: 0, I, II, III
+Transitions:
+0 : a : I
+0 : b : 0
+I : a : II
+I : b : III
+II : b : 0
+II : a : IV
+III : a : I
+III : b : IV
+IV : a : IV
+IV : b : IV
