@@ -276,15 +276,16 @@ def minimization(automaton):
     nb = 0
     for i in range(len(P_next)):
         for t in a_mini["transitions"]:
-            if P_next[i][0] == t[0]:
-                new_transitions.append([])
-                new_transitions[nb].append("{}".format(roman_nb(i)))
-                new_transitions[nb].append("{}".format(t[1]))
-                for j in range(len(P_next)):
-                    if t[2] in P_next[j]:
-                        new_transitions[nb].append("{}".format(roman_nb(j)))
-                        break
-                nb += 1
+            if len(P_next[i]):
+                if P_next[i][0] == t[0]:
+                    new_transitions.append([])
+                    new_transitions[nb].append("{}".format(roman_nb(i)))
+                    new_transitions[nb].append("{}".format(t[1]))
+                    for j in range(len(P_next)):
+                        if t[2] in P_next[j]:
+                            new_transitions[nb].append("{}".format(roman_nb(j)))
+                            break
+                    nb += 1
     a_mini["transitions"] = new_transitions
 
     S_equivalence = "The new states have the following correspondence: \n"
@@ -292,3 +293,17 @@ def minimization(automaton):
         S_equivalence = S_equivalence + ("- {} : ".format(roman_nb(i))) + ("{}".format(', '.join(P_next[i]))) + "\n"
 
     return [a_mini, S_equivalence]
+
+automaton = {
+        "id": "4",
+        "alphabet": ["a"],
+        "states": ["0", "1"],
+        "initial_states": ["0"],
+        "final_states": [],
+        "transitions": [
+            ["0", "a", "1"]
+        ]
+    }
+
+print(automaton, "\n\n")
+print(minimization(automaton))
