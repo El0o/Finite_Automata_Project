@@ -203,12 +203,17 @@ def minimization(automaton):
     else:
         a_mini = deepcopy(completion(automaton))
 
-    P_next = [deepcopy(a_mini["final_states"]), []]
+    if len(a_mini["final_states"]) > 0:
+        P_next = [deepcopy(a_mini["final_states"]), []]
+        temp = 1
+    else:
+        P_next = [[]]
+        temp = 0
     for s in a_mini["states"]:
         if s not in a_mini["final_states"]:
-            P_next[1].append(s)
-    if not P_next[1]:
-        P_next.pop(1)
+            P_next[temp].append(s)
+    if not P_next[temp]:
+        P_next.pop(temp)
     P_previous = []
     while P_previous != P_next:
         P_previous = P_next
@@ -305,5 +310,4 @@ automaton = {
         ]
     }
 
-print(automaton, "\n\n")
-print(minimization(automaton))
+minimization(automaton)
