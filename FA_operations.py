@@ -207,6 +207,8 @@ def minimization(automaton):
     for s in a_mini["states"]:
         if s not in a_mini["final_states"]:
             P_next[1].append(s)
+    if not P_next[1]:
+        P_next.pop(1)
     P_previous = []
     while P_previous != P_next:
         P_previous = P_next
